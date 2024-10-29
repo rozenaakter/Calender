@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <div class="calendar">
+        <p class="month" id="month">April</p>
+        <p class="day" id="day">Friday</p>
+        <p class="day-number" id="day-number">20</p>
+        <p class="year" id="year">2012</p>
+    </div>
+
+    <script>
+
+        const monthEl = document.getElementById('month');
+        const dayEl = document.getElementById('day');
+        const daynumEl = document.getElementById('day-number');
+        const yearEl  = document.getElementById('year'); 
+
+        const date = new Date();
+
+        // Set month
+        monthEl.innerHTML = date.toLocaleDateString('en', {
+            month: 'long',
+        });
+
+        // Set day
+        dayEl.innerHTML = date.toLocaleDateString('en', {
+            weekday: 'long'
+        });
+
+        // Set day number
+        daynumEl.innerHTML = date.getDate();
+
+        // Set year
+        yearEl.innerHTML = date.getFullYear();
+
+    </script>
+</body>
+</html>
